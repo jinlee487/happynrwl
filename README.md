@@ -146,6 +146,9 @@ we can use the monorepo library helloTsc in the demoweb easily
         hello-tsc
         Hello World!
 
+we can see that the hello-tsc method worked properly from a different application within the same workspace! Amazing!
+<br /><br /><br /><br /><br />
+
 <p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
 
 🔎 **Smart, Fast and Extensible Build System**
