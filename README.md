@@ -16,7 +16,15 @@ We will be testing out building typescript library, web and node app.
         ├── package.json
         └── tsconfig.base.json
 
+This creates a workspace with the directory as above.
+
         npx nx generate @nrwl/js:library --name=hello-tsc --buildable
+
+This creates a new library in the packages/hello-tsc folder that already comes with both ESLint and Jest set up and ready to use.
+
+You can run nx lint hello-tsc to run linting or nx test hello-tsc to run Jest tests.
+
+Note, by passing the --buildable flag, our library can be built.
 
         npx nx lint hello-tsc
 
@@ -81,20 +89,34 @@ We will be testing out building typescript library, web and node app.
 
             See Nx Cloud run details at https://nx.app/runs/072oXhX1KpF
 
-        The output of the build step is placed into the dist/packages/hello-tsc by default.
+The output of the build step is placed into the dist/packages/hello-tsc by default.
+
+To generate a new framework agnostic TS node application, run
+
+        nx generate @nrwl/node:app demoapp
+
+if @nrwl/node is not installed, then run
 
         npx nx report
-        if @nrwl/node is not installed, then run
+
+you can find that @nrwl/node is not installed
+
         npm i @nrwl/node --save
 
-        run the application
+will install the library
+
+run the application by
+
         npx nx serve demoapp
 
-        if @nrwl/web is not installed, then run
+To generate a new framework agnostic TS web application, run
+
+        nx generate @nrwl/web:app demoapp
+
+if @nrwl/web is not installed, then run
+
         npm i @nrwl/web --save
-
         npx nx serve demowebapp
-
         > nx run demowebapp:serve
 
         <i> [webpack-dev-server] Project is running at:
@@ -103,6 +125,9 @@ We will be testing out building typescript library, web and node app.
 
         > NX Web Development Server is listening at http://localhost:4200/
 
+we can use the monorepo library helloTsc in the demoweb easily
+
+        // packages\demoapp\src\environments
         // importing from hello-tsc
         import { helloTsc } from '@happynrwl/hello-tsc';
 
