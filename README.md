@@ -1,8 +1,123 @@
-
-
 # Happynrwl
 
 This project was generated using [Nx](https://nx.dev).
+
+This is a demo project to learn how to use nx to build typescript library, web and node apps.
+
+We will be testing out building typescript library, web and node app.
+
+        npx create-nx-workspace happynrwl --preset=ts
+
+        happynrwl/
+        ├── packages/
+        ├── tools/
+        ├── workspace.json
+        ├── nx.json
+        ├── package.json
+        └── tsconfig.base.json
+
+        npx nx generate @nrwl/js:library --name=hello-tsc --buildable
+
+        npx nx lint hello-tsc
+
+        > nx run hello-tsc:lint
+
+        Linting "hello-tsc"...
+        =============
+
+        WARNING: You are currently running a version of TypeScript which is not officially supported by @typescript-eslint/typescript-estree.
+
+        You may find that it works just fine,
+        or you may not.
+
+        SUPPORTED TYPESCRIPT VERSIONS: >=3.3.1 <4.7.0
+
+        YOUR TYPESCRIPT VERSION: 4.7.4
+
+        Please only submit bug reports when using the officially supported version.
+
+        =============
+
+        All files pass linting.
+
+        ————————————————————————————————————
+
+        > NX Successfully ran target lint
+        > for project hello-tsc (4s)
+
+            See Nx Cloud run details at https://nx.app/runs/5AWqF9VcZwc
+
+        npx nx test hello-tsc
+
+        > nx run hello-tsc:test
+
+        PASS hello-tsc packages/hello-tsc/src/lib/hello-tsc.spec.ts
+        helloTsc
+        √ should work (2 ms)
+
+        Test Suites: 1 passed, 1 total
+        Tests: 1 passed, 1 total
+        Snapshots: 0 total
+        Time: 3.044 s
+        Ran all test suites.
+
+        ————————————————————————————————————
+
+        > NX Successfully ran target test
+        > for project hello-tsc (7s)
+
+            See Nx Cloud run details at https://nx.app/runs/YE5E0EmJyHT
+
+        npx nx build hello-tsc
+
+        > nx run hello-tsc:build
+
+        Compiling TypeScript files for project "hello-tsc"...
+        Done compiling TypeScript files for project "hello-tsc".
+
+        ————————————————————————————————————
+
+        > NX Successfully ran target build for project hello-tsc (2s)
+
+            See Nx Cloud run details at https://nx.app/runs/072oXhX1KpF
+
+        The output of the build step is placed into the dist/packages/hello-tsc by default.
+
+        npx nx report
+        if @nrwl/node is not installed, then run
+        npm i @nrwl/node --save
+
+        run the application
+        npx nx serve demoapp
+
+        if @nrwl/web is not installed, then run
+        npm i @nrwl/web --save
+
+        npx nx serve demowebapp
+
+        > nx run demowebapp:serve
+
+        <i> [webpack-dev-server] Project is running at:
+        <i> [webpack-dev-server] Loopback: http://localhost:4200/, http://127.0.0.1:4200/
+        <i> [webpack-dev-server] 404s will fallback to '/index.html'
+
+        > NX Web Development Server is listening at http://localhost:4200/
+
+        // importing from hello-tsc
+        import { helloTsc } from '@happynrwl/hello-tsc';
+
+        // use the function
+
+        console.log(helloTsc());
+
+        console.log('Hello World!');
+
+        npx nx serve demoapp
+        Debugger listening on ws://localhost:9229/19ed6d94-3233-4e29-9a02-a405b6c753dc
+        Debugger listening on ws://localhost:9229/19ed6d94-3233-4e29-9a02-a405b6c753dc
+        For help, see: https://nodejs.org/en/docs/inspector
+        hello-tsc
+        Hello World!
 
 <p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
 
@@ -78,8 +193,6 @@ Run `nx graph` to see a diagram of the dependencies of your projects.
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
-
-
 
 ## ☁ Nx Cloud
 
