@@ -2,6 +2,8 @@
 
 This project was generated using [Nx](https://nx.dev).
 
+[demo-tutorial](https://nx.dev/getting-started/nx-and-typescript)
+
 This is a demo project to learn how to use nx to build typescript library, web and node apps.
 
 We will be testing out building typescript library, web and node app.
